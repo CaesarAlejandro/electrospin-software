@@ -1,0 +1,51 @@
+h2,
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* body {
+  background-color: rgb(36, 140, 192);
+} */
+
+.boton{
+  border: 0;
+  background-image: linear-gradient(150deg, #9500ff, #09f,#00DDFF);
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  font-size: 18px;
+  padding: 4px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.express{
+  background-color: black;
+  padding: 16px 24px;
+  border-radius: 6px;
+  transition: .3s;
+}
+
+.boton:hover .express{
+  background: none;
+} 
+
+.boton:active{
+  transform: scale(0.9); 
+}
+
+.letra{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
+  padding: 4px;
+}
+
+#apertura1{
+  background-color: gray;
+  padding: 10px;
+}
+
+#apertura2{
+ background-color: #00DDFF;
+ padding: 10px;
+}
