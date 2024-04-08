@@ -1,9 +1,9 @@
 import machine
 import boot
-import adelante
-import atras
+from adelante import move_on1
+from atras import back
 
-
+'''
 html = """<!DOCTYPE html>
 <html lang="es">
   <head>   
@@ -89,4 +89,8 @@ while True:
     response = html % '\n'.join(rows)
     cl.send('HTTP/1.0 200 OK\r\nContent-type: text/html\r\n\r\n')
     cl.send(response)
-    cl.close()
+    cl.close()'''
+
+move_on1()
+
+back()
