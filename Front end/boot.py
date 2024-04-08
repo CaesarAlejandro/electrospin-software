@@ -28,4 +28,6 @@ pin25 = Pin(25, Pin.OUT)
 pin34 = Pin(34, Pin.OUT)
 pin35 = Pin(35, Pin.OUT)
 pin32 = Pin(32, Pin.OUT)
+pin14 = Pin(14, Pin.OUT)
+
 
