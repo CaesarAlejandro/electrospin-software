@@ -1,5 +1,8 @@
 import machine
-pins = [machine.Pin(i, machine.Pin.IN) for i in (0, 2, 4, 5, 12, 13, 14, 15)]
+import boot
+import adelante
+import atras
+
 
 html = """<!DOCTYPE html>
 <html lang="es">
