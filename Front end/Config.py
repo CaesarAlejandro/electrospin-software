@@ -25,8 +25,8 @@ do_connect()
 
 pinDir = Pin(33, Pin.OUT)
 pinStep = Pin(25, Pin.OUT)
-pinM2 = Pin(34, Pin.OUT)
-pinM0 = Pin(35, Pin.OUT)
+pinM2 = Pin(26, Pin.OUT)
+pinM0 = Pin(27, Pin.OUT)
 pinM1 = Pin(32, Pin.OUT)
 pinEnable = Pin(14, Pin.OUT)
 

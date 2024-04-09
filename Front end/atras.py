@@ -1,14 +1,14 @@
 import machine
-import boot
+import Config
 
 def back():
 
-    boot.pinDir.off()
+    Config.pinDir.off()
 
     for i in range(0 , 200):
-        boot.pinStep.on()
+        Config.pinStep.on()
         time.sleep_ms(10)
-        boot.pinStep.off()
+        Config.pinStep.off()
         time.sleep_ms(10)
         
 

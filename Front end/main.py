@@ -1,5 +1,5 @@
 import machine
-import boot
+import Config
 from adelante import move_on1
 from atras import back
 
@@ -90,7 +90,15 @@ while True:
     cl.send('HTTP/1.0 200 OK\r\nContent-type: text/html\r\n\r\n')
     cl.send(response)
     cl.close()'''
-
-move_on1()
-
-back()
+pinled = Pin(2 , Pin.OUT)
+pinDir = Pin(33, Pin.OUT)
+pinStep = Pin(25, Pin.OUT)
+pinM2 = Pin(34, Pin.OUT)
+pinM0 = Pin(35, Pin.OUT)
+pinM1 = Pin(32, Pin.OUT)
+pinEnable = Pin(14, Pin.OUT)
+while True:
+  pinled.on()
+  move_on1()
+  pinled.on
+  back()
