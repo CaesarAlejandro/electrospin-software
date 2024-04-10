@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Experimento Ray</title>   
+    <link href="estiloRay.css" rel="stylesheet">
+    <!-- codificacion de la pagina-->
+    <meta charset="UTF-8">
+    <!--esta es una libreria llamada ajax, la cual permite exportar funciones-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Esta es la funcion que da marcha atras, busca el valor del boton por medio del atributo e invoca a la funcion que da marcha atras cuando encuentra el valor-->
+    <script>
+      function IrParaAtras(){
+        var boton = document.querySelector('button');
+        var velocidad = boton.querySelector('span').getAttribute('data-velocidad')
+        $.ajax({
+          url: '/back',
+          Type: 'POST',
+          contentType: 'application/json', 
+          data: JSON.stringify({velocidad: velocidad}),
+          success: function(response){
+            alert('la funcion correspondiente ha sisdo ejecutada');
+          },
+          error: function(error){
+            console.log(error)
+          }
+        })
+      }
+    </script>
+   <!--esta es la funcion que da marcha hacia delante, verifica cual valor es el seleccionado de la lista para invocar una de las cincio funciones que dan marcha hacia adelante-->
+   <script>
+    function IrParaAdelante(){
+      var velocidadSeleccionada = document.getElementById('selectorVelocidad').value;
+      $.ajax({
+        url: '/establecer_velocidad',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({velocidad: velocidadSeleccionada}),
+        success: function(response){
+          console.log('velocidad establecida', response);
+        },
+        error: function(error){
+          console.log(error);
+        }
+      })
+    }
+
+   </script>
+
+  </head>
+    
+  <body> 
+    <main id="apertura1">
+    <h1>Bienvenido a la interfaz de la Appi</h1> 
+    <br><hr>
+    </main>
+    <main id="apertura2">
+       <!--esta es una lista con las distintas velocidades, cada una de ellas con un valor tabulado el cual es el que lee la funcion--> 
+      <h2>Eliga la velocidad con la que quiere que avance la aguja</h2><br>
+    
+      <select id="selectorVelocidad" class="lista">
+        <option value="pasoCompleto"> 1 Paso </option>
+        <option value="medioPaso"> 1/2 Paso </option>
+        <option value="cuartoDePaso"> 1/4 Paso </option>
+        <option value="octavoDePaso"> 1/8 Paso </option>
+        <option value="dieciseisAvosPaso"> 1/16 Paso </option>
+      </select>
+      <!--este es uno de los botones, al pulsarlo se activa la funcion que da marcha hacia adelante-->   
+      <h2>Presione el siguiente boton para mover la aguja hacia adelante</h2><br>
+
+      <button onclick="IrParaAdelante()" class="boton">
+        <span class="express">Avazar</span>
+      </button>
+      
+      
+      <h2>Presione el siguiente boton para mover la aguja hacia atras</h2><br> 
+        
+      <!--Este es el nuevo boton, el atributo "onclick" permite acceder a la funcion importada para dar marcha hacia atras-->
+      <button onclick="IrParaAtras()" class="boton">
+        <span class="express" data-velocidad="pasoCompleto" >Retroceder</span>
+      </button>
+
+      <h2>Presione el siguiente boton para detener el movimiento de la aguja</h2><br>
+        
+      <button type="submit" class="boton"> 
+        <span class="express">Detener</span>
+      </button>
+         
+     
+         
+     
+    </main>
+    
+  </body>
+    
+</html>
+
